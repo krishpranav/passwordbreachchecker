@@ -1,0 +1,19 @@
+
+{
+    "manifest_version": 2,
+  
+    "name": "Password Breach Checker",
+    "description": "This extension checks your passwords against the HaveIBeenPwned database to ensure that they are safe.",
+    "version": "0.8",
+  
+  
+    "content_scripts": [
+      {
+        "matches": ["*://*/*"],
+        "all_frames": true,
+        "js": ["jquery-2.1.4.min.js", "checker.js", "sha1.js"],
+        "css": ["content.css"],
+        "run_at": "document_end"
+      }
+    ]
+  }
