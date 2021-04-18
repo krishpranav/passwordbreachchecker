@@ -348,3 +348,17 @@
     };
   
     var exports = createMethod();
+    
+    if (COMMON_JS) {
+        module.exports = exports;
+    } else {
+        root.sha1 = exports;
+
+        if (AMD) {
+            define(function() {
+                return exports;
+            });
+        }
+    }
+
+})();
